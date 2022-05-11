@@ -1,0 +1,377 @@
+<?xml version='1.0'?>
+<sdf version='1.4'>
+  <model name="IFV">
+    <static>false</static>
+<!- -----------------------BODY-------------------- ->
+
+    <link name='chassis'>
+      <pose>0 0 0.3 0 0 0</pose>
+      <collision name='bodyc'>
+        <geometry>
+          <box>
+            <size>.4 .3 .1</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name='bodyv'>
+        <geometry>
+          <box>
+            <size>.4 .3 .1</size>
+          </box>
+        </geometry>
+      </visual>
+            
+      <collision name='camerac'>
+        <pose>0.125 0 0.05 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>.05</radius>
+          </sphere>
+        </geometry>
+      </collision>
+
+      <visual name='camerav'>
+        <pose>0.125 0 0.05 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>.05</radius>
+          </sphere>
+        </geometry>
+      </visual>
+    </link>
+
+<!- ---------------LF leg----------------- ->
+    <link name="LF_thigh">
+      <pose>0.15 0.16 0.25 0 0 0</pose>
+      <collision name='collision'>
+        <geometry>
+          <box>
+            <size>.05 .02 .15</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name='visual'>
+        <geometry>
+          <box>
+            <size>.05 .02 .15</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>   
+    <link name="LF_calf">
+      <pose>0.15 0.14 0.15 0 0 0</pose>
+      <collision name='collision'>
+        <geometry>
+          <box>
+            <size>.04 .02 .15</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name='visual'>
+        <geometry>
+          <box>
+            <size>.04 .02 .15</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name='feetc'>
+          <pose>0 0 -0.075 1.57079632679 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.02</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0</mu>
+                <mu2>0</mu2>
+                <slip1>1.0</slip1>
+                <slip2>1.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='feetv'>
+          <pose>0 0 -0.075 1.57079632679 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.02</radius>
+              <length>0.02</length>
+            </cylinder>
+          </geometry>
+        </visual>
+    </link>
+
+<!- --------------------RF leg------------------- ->
+    <link name="RF_thigh">
+          <pose>0.15 -0.16 0.25 0 0 0</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>.05 .02 .15</size>
+                </box>
+              </geometry>
+            </collision>
+
+            <visual name='visual'>
+              <geometry>
+                <box>
+                  <size>.05 .02 .15</size>
+                </box>
+              </geometry>
+            </visual>
+    </link>   
+    <link name="RF_calf">
+        <pose>0.15 -0.14 0.15 0 0 0</pose>
+        <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>.04 .02 .15</size>
+                </box>
+              </geometry>
+            </collision>
+
+            <visual name='visual'>
+              <geometry>
+                <box>
+                  <size>.04 .02 .15</size>
+                </box>
+              </geometry>
+            </visual>
+            <collision name='feetc'>
+          <pose>0 0 -0.075 1.57079632679 0</pose>
+          <geometry>
+            <cylinder>
+                <radius>0.02</radius>
+                <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0</mu>
+                <mu2>0</mu2>
+                <slip1>1.0</slip1>
+                <slip2>1.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='feetv'>
+          <pose>0 0 -0.075 1.57079632679 0 0</pose>
+          <geometry>
+            <cylinder>
+                <radius>0.02</radius>
+                <length>0.02</length>
+            </cylinder>
+          </geometry>
+        </visual>
+    </link>
+<!- -------------------LH leg-------------------- ->
+    <link name="LH_thigh">
+          <pose>-0.15 0.16 0.25 0 0 0</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>.05 .02 .15</size>
+                </box>
+              </geometry>
+            </collision>
+
+            <visual name='visual'>
+              <geometry>
+                <box>
+                  <size>.05 .02 .15</size>
+                </box>
+              </geometry>
+            </visual>
+    </link>   
+    <link name="LH_calf">
+        <pose>-0.15 0.14 0.15 0 0 0</pose>
+        <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>.04 .02 .15</size>
+                </box>
+              </geometry>
+            </collision>
+
+            <visual name='visual'>
+              <geometry>
+                <box>
+                  <size>.04 .02 .15</size>
+                </box>
+              </geometry>
+            </visual>
+            <collision name='feetc'>
+          <pose>0 0 -0.075 1.57079632679 0</pose>
+          <geometry>
+            <cylinder>
+                <radius>0.02</radius>
+                <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0</mu>
+                <mu2>0</mu2>
+                <slip1>1.0</slip1>
+                <slip2>1.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='feetv'>
+          <pose>0 0 -0.075 1.57079632679 0 0</pose>
+          <geometry>
+            <cylinder>
+                <radius>0.02</radius>
+                <length>0.02</length>
+            </cylinder>
+          </geometry>
+        </visual>
+    </link>
+<!- -------------------RH leg-------------------- ->
+    <link name="RH_thigh">
+          <pose>-0.15 -0.16 0.25 0 0 0</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>.05 .02 .15</size>
+                </box>
+              </geometry>
+            </collision>
+
+            <visual name='visual'>
+              <geometry>
+                <box>
+                  <size>.04 .02 .15</size>
+                </box>
+              </geometry>
+            </visual>
+    </link> 
+    <link name="RH_calf">
+        <pose>-0.15 -0.14 0.15 0 0 0</pose>
+        <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>.04 .02 .15</size>
+                </box>
+              </geometry>
+            </collision>
+
+            <visual name='visual'>
+              <geometry>
+                <box>
+                  <size>.04 .02 .15</size>
+                </box>
+              </geometry>
+            </visual>
+        <collision name='feetc'>
+          <pose>0 0 -0.075 1.57079632679 0</pose>
+          <geometry>
+            <cylinder>
+                <radius>0.02</radius>
+                <length>0.02</length>
+            </cylinder>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0</mu>
+                <mu2>0</mu2>
+                <slip1>1.0</slip1>
+                <slip2>1.0</slip2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='feetv'>
+          <pose>0 0 -0.075 1.57079632679 0 0</pose>
+          <geometry>
+            <cylinder>
+                <radius>0.02</radius>
+                <length>0.02</length>
+            </cylinder>
+          </geometry>
+        </visual>
+    </link>
+    <joint type="revolute" name="LF_body2thigh">
+        <pose>0 0 0.05 0 0 0</pose>
+        <child>LF_thigh</child>
+        <parent>chassis</parent>
+        <axis>
+          <xyz>0 1 0</xyz>
+        </axis>
+      </joint>
+
+    <joint type="revolute" name="LF_thigh2calf">
+        <pose>0 0 0.05 0 0 0</pose>
+        <child>LF_calf</child>
+        <parent>LF_thigh</parent>
+        <axis>
+          <xyz>0 1 0</xyz>
+        </axis>
+    </joint>
+
+     <joint type="revolute" name="RF_body2thigh">
+        <pose>0 0 0.05 0 0 0</pose>
+        <child>RF_thigh</child>
+        <parent>chassis</parent>
+        <axis>
+          <xyz>0 1 0</xyz>
+        </axis>
+      </joint>
+
+    <joint type="revolute" name="RF_thigh2calf">
+        <pose>0 0 0.05 0 0 0</pose>
+        <child>RF_calf</child>
+        <parent>RF_thigh</parent>
+        <axis>
+          <xyz>0 1 0</xyz>
+        </axis>
+    </joint>
+    <joint type="revolute" name="LH_body2thigh">
+        <pose>0 0 0.05 0 0 0</pose>
+        <child>LH_thigh</child>
+        <parent>chassis</parent>
+        <axis>
+          <xyz>0 1 0</xyz>
+        </axis>
+    </joint>
+
+    <joint type="revolute" name="LH_thigh2calf">
+        <pose>0 0 0.05 0 0 0</pose>
+        <child>LH_calf</child>
+        <parent>LH_thigh</parent>
+        <axis>
+          <xyz>0 1 0</xyz>
+        </axis>
+    </joint>
+
+     <joint type="revolute" name="RH_body2thigh">
+        <pose>0 0 0.05 0 0 0</pose>
+        <child>RH_thigh</child>
+        <parent>chassis</parent>
+        <axis>
+          <xyz>0 1 0</xyz>
+        </axis>
+      </joint>
+
+    <joint type="revolute" name="RH_thigh2calf">
+        <pose>0 0 0.05 0 0 0</pose>
+        <child>RH_calf</child>
+        <parent>RH_thigh</parent>
+        <axis>
+          <xyz>0 1 0</xyz>
+        </axis>
+    </joint>
+
+  </model>
+</sdf>
