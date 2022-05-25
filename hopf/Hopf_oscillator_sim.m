@@ -9,6 +9,7 @@ beta = 0.75;
 wst = (1-beta)/beta*wsw;
 b=100;
 Ts = 0.0001;
+t_d =15;
 %
 cyclelist = [0 0.5 0 0.5];
 for i = 1:size(cyclelist,2)
@@ -30,6 +31,14 @@ q31 = model.logsout{6}.Values.Data;
 q32 = model.logsout{3}.Values.Data;
 q41 = model.logsout{7}.Values.Data;
 q42 = model.logsout{4}.Values.Data;
+dq11 = model.dq11.Data;
+dq12 = model.dq12.Data;
+dq21 = model.dq21.Data;
+dq22 = model.dq22.Data;
+dq31 = model.dq31.Data;
+dq32 = model.dq32.Data;
+dq41 = model.dq41.Data;
+dq42 = model.dq42.Data;
 figure
 subplot(4,1,1)
 plot(t,q11,t,q12,'-')
@@ -47,9 +56,28 @@ subplot(4,1,4)
 plot(t,q41,t,q42,'-')
 legend('U4','V4')
 axis([0,5,-2,2])
+figure
+subplot(4,1,1)
+plot(t,dq11,t,dq12,'-')
+legend('U1','V1')
+
+subplot(4,1,2)
+plot(t,dq21,t,dq22,'-')
+legend('U2','V2')
+
+subplot(4,1,3)
+plot(t,dq31,t,dq32,'-')
+legend('U3','V3')
+
+subplot(4,1,4)
+plot(t,dq41,t,dq42,'-')
+legend('U4','V4')
+
 %%
 %figure
 %plot(t,q11,'-')
 %hold on
 %plot(t,q12,'-')
 %%
+save('Traj15s.mat','q11','q12','q21','q22','q31','q32','q41','q42')
+save('dTraj15s.mat','dq11','dq12','dq21','dq22','dq31','dq32','dq41','dq42')
