@@ -7,7 +7,7 @@
 % HW #4. The code modifies the dynamic parameters of the manipulator system 
 % for a point mass payload and sets the pi_l vector.
 %**************************************************************************
-
+global pi_m a k_r2
 % Note that this code assumes that the "inertia moments relative to 
 % origins of link frames" in the param.m file follow the conventions 
 % defined for the "augmented link" on page 283 of Siciliano et al. 
