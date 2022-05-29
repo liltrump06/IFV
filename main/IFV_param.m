@@ -2,7 +2,7 @@
 
 % L. Villani, G. Oriolo, B. Siciliano
 % February 2009
-
+global pi_m a k_r2
 % link parameters
   % lengths
     a  = [0.15;0.15];
