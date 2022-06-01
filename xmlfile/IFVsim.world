@@ -11,16 +11,17 @@
 
     <model name="IFV">
       <static>false</static>
+      <pose>0 0 -0.05 0 0 0</pose>
 <!- -----------------------BODY-------------------- ->
 
       <link name='chassis'>
         <pose>0 0 0.3 0 0 0</pose>
         <inertial>
-        <mass>2.4</mass>
+        <mass>0.24</mass>
         <inertia>
-          <ixx>0.02</ixx>
-          <iyy>0.034</iyy>
-          <izz>0.05</izz>
+          <ixx>0.002</ixx>
+          <iyy>0.0034</iyy>
+          <izz>0.005</izz>
         </inertia>
         </inertial>
         <collision name='bodyc'>
@@ -120,12 +121,17 @@
           <surface>
             <friction>
               <ode>
-                <mu>10</mu>
-                <mu2>10</mu2>
+                <mu>100</mu>
+                <mu2>100</mu2>
                 <slip1>0</slip1>
                 <slip2>0</slip2>
               </ode>
             </friction>
+            <contact>
+              <ode>
+                <kd>1000000</kd>
+              </ode>
+            </contact> 
           </surface>
         </collision>
         <visual name='feetv'>
@@ -200,12 +206,17 @@
           <surface>
             <friction>
               <ode>
-                <mu>10</mu>
+                <mu>100</mu>
                 <mu2>10</mu2>
                 <slip1>0</slip1>
                 <slip2>0</slip2>
               </ode>
-            </friction>   
+            </friction>
+            <contact>
+              <ode>
+                <kd>1000000</kd>
+              </ode>
+            </contact>    
           </surface>
         </collision>
         <visual name='feetv'>
@@ -279,12 +290,17 @@
           <surface>
             <friction>
               <ode>
-                <mu>10</mu>
-                <mu2>10</mu2>
+                <mu>100</mu>
+                <mu2>100</mu2>
                 <slip1>0</slip1>
                 <slip2>0</slip2>
               </ode>
             </friction>
+            <contact>
+              <ode>
+                <kd>1000000</kd>
+              </ode>
+            </contact> 
           </surface>
         </collision>
         <visual name='feetv'>
@@ -358,12 +374,17 @@
           <surface>
             <friction>
               <ode>
-                <mu>10</mu>
-                <mu2>10</mu2>
+                <mu>100</mu>
+                <mu2>100</mu2>
                 <slip1>0</slip1>
                 <slip2>0</slip2>
               </ode>
             </friction>
+            <contact>
+              <ode>
+                <kd>1000000</kd>
+              </ode>
+            </contact> 
           </surface>
         </collision>
         <visual name='feetv'>
@@ -427,6 +448,7 @@
         <parent>RF_thigh</parent>
         <axis>
           <xyz>0 1 0</xyz>
+      
           <limit>
             <effort>55</effort> 
             <lower>2.77507351067</lower>
@@ -458,6 +480,7 @@
         <parent>LH_thigh</parent>
         <axis>
           <xyz>0 1 0</xyz>
+          
           <limit>
             <effort>55</effort> 
             <lower>2.77507351067</lower>
@@ -474,6 +497,7 @@
         <parent>chassis</parent>
         <axis>
           <xyz>0 1 0</xyz>
+          
           <limit>
             <effort>20</effort> 
             <lower>1.0471975512</lower>

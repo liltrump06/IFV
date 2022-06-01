@@ -12,3 +12,8 @@ if -pi>q1
 elseif pi<q1
     q1 = q1-2*pi;
 end
+
+q1 = -(q1-pi);
+q2 = -q2;
+
+end

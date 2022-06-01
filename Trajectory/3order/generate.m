@@ -1,8 +1,8 @@
 clc;clear;close all
-T = 1;
-S = 80;
-h = 240-15;
-H1 = 240;
+T = 0.5;
+S = 0.05;
+h = 0.24-0.035;
+H1 = 0.24;
 dt = 0.001;
 t = linspace(0,T-dt,T/dt);
 x1list = [];
@@ -65,8 +65,15 @@ for i = t
         ddy2list = [ddy2list;ddy2];
     end
 end
-
 %%
-save('ope_3order.mat','t','x1list','x2list','dx1list','dx2list','ddx1list','ddx2list','y1list',"y2list","dy1list","dy2list","ddy1list","ddy2list")
+figure
+plot([x1list;x2list],[y1list;y2list],'o')
+figure
+plot(x1list,'r-')
+hold on 
+plot(dx1list,'b-')
+plot(ddx1list,'g-')
+%%
+save('ope_3order.mat','dt','T','x1list','x2list','dx1list','dx2list','ddx1list','ddx2list','y1list',"y2list","dy1list","dy2list","ddy1list","ddy2list")
 %%
 
